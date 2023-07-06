@@ -34,6 +34,7 @@ router.post("/",async (req,res)=>{
     //caso ocorra algum erro na inclusão, o programa irá capturar(catch) o erro
     try{
         //insert, faz a inserção na tabela livros(e retorna o id do registro inserido)
+        //comentario
         const novo = await dbKnex("editoras").insert({ nome,cidade,estado,telefone,rua,cep});
         res.status(201).json({id:novo[0]}); //statuscode indica Create
     }catch(error){
